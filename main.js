@@ -21,11 +21,11 @@ var matcheslist = document.querySelector("ol")
 var unmatchedtoggle = document.querySelector("details")
 var unmatchedlist = document.querySelector("details ol")
 
-if(navigator.serviceWorker) {
-  navigator.serviceWorker.register("offline.js").then(function() {
-    if(navigator.serviceWorker.controller == null) {
-      tell("Full functionality is now available offline.")
-} }) }
+//if(navigator.serviceWorker) {
+  //navigator.serviceWorker.register("offline.js").then(function() {
+    //if(navigator.serviceWorker.controller == null) {
+      //tell("Full functionality is now available offline.")
+//} }) }
 
 String.prototype.replace = function(oldstring, newstring) { // default only replaces first instance
   return(this.split(oldstring).join(newstring))
