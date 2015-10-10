@@ -1,44 +1,44 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Bulk Search and Replace</title>
-    <style>
-      body { font-family: Roboto, sans-serif; font-size: 100% }
-      input[type="file"], details { display: none }
-      button[id], input[type="text"], label { font-size: 200% }
-      input[type="checkbox"], select { transform: scale(2) }
-      label, button { white-space: pre }
-      progress { width: 96vw; display: none }
-    </style>
-    <script src="dialogs.js"></script>
-  </head>
-  <body>
-    <input type="file" multiple>
-    <input type="file" directory webkitdirectory>
-    <button id="files"> Select Files </button>
-    <button id="folder"> Select Folder </button>
-    <p>
-    <label><input type="checkbox" id="save">Autosave    </label>
-    <label><input type="checkbox" id="media" checked>Exclude Media    </label>
-    <label><input type="checkbox" id="case" checked>Match Case    </label>
-    <label><input type="checkbox" id="phrase" checked disabled>Match Phrase</label>
-    <label><select>
-      <option>Cautious</option>
-      <option>Quick</option>
-    </select>Mode</label>
-    <p>
-    <input type="text" id="searchtext" placeholder=" Enter text.">
-    <button id="search"> Search </button>
-    <p>
-    <input type="text" id="oldtext" placeholder=" Enter old text.">
-    <input type="text" id="newtext" placeholder=" Enter new text.">
-    <button id="replace"> Replace </button>
-    <progress></progress>
-    <ol></ol>
-    <details>
-      <summary>Unmatched</summary>
-      <ol></ol>
-    </details>
-    <script src="main.js"></script>
-  </body>
+ <head>
+  <title>Bulk Search and Replace</title>
+  <style>
+   body { font-family: Roboto, sans-serif; font-size: 100% }
+   input[type="file"], details { display: none }
+   button[id], input[type="text"], label { font-size: 200% }
+   input[type="checkbox"], select { transform: scale(2) }
+   label, button { white-space: pre }
+   progress { width: 96vw; display: none }
+  </style>
+  <script src="https://danielherr.github.io/Simple-Dialogs/dialogs.js"></script>
+ </head>
+ <body>
+  <input type="file" multiple>
+  <input type="file" directory webkitdirectory>
+  <button id="files"> Select Files </button>
+  <button id="folder"> Select Folder </button>
+  <p>
+  <label><input type="checkbox" id="save">Autosave    </label>
+  <label><input type="checkbox" id="media" checked>Exclude Media    </label>
+  <label><input type="checkbox" id="case" checked>Match Case    </label>
+  <label><input type="checkbox" id="phrase" checked disabled>Match Phrase</label>
+  <label><select>
+   <option>Cautious</option>
+   <option>Quick</option>
+  </select>Mode</label>
+  <p>
+  <input type="text" id="searchtext" placeholder=" Enter text.">
+  <button id="search"> Search </button>
+  <p>
+  <input type="text" id="oldtext" placeholder=" Enter old text.">
+  <input type="text" id="newtext" placeholder=" Enter new text.">
+  <button id="replace"> Replace </button>
+  <progress></progress>
+  <ol></ol>
+  <details>
+   <summary>Unmatched</summary>
+   <ol></ol>
+  </details>
+  <script src="main.js"></script>
+ </body>
 </html>
