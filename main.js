@@ -22,7 +22,7 @@ var unmatchedtoggle = document.querySelector("details")
 var unmatchedlist = document.querySelector("details ol")
 
 if(navigator.serviceWorker) {
-  navigator.serviceWorker.register("cache.js").then(function() {
+  navigator.serviceWorker.register("offline.js").then(function() {
     if(navigator.serviceWorker.controller == null) {
       tell("Full functionality is now available offline.")
 } }) }
