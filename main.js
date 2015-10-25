@@ -2,48 +2,42 @@
 
 var files = []
 var stopped = false
-var filesinput = document.querySelector("input[multiple]")
-var folderinput = document.querySelector("input[directory]")
-var filesbutton = document.querySelector("#files")
-var folderbutton = document.querySelector("#folder")
-var autosave = document.querySelector("#save")
-var excludemedia = document.querySelector("#media")
-var matchcase = document.querySelector("#case")
-var searchinput = document.querySelector("#searchtext")
-var defaultsize = searchinput.size
-var searchbutton = document.querySelector("#search")
-var oldinput = document.querySelector("#oldtext")
-var newinput = document.querySelector("#newtext")
-var replacebutton = document.querySelector("#replace")
-var progress = document.querySelector("progress")
-var matcheslist = document.querySelector("ol")
-var unmatchedtoggle = document.querySelector("details")
-var unmatchedlist = document.querySelector("details ol")
+const filesinput = document.querySelector("input[multiple]")
+const folderinput = document.querySelector("input[directory]")
+const filesbutton = document.querySelector("#files")
+const folderbutton = document.querySelector("#folder")
+const autosave = document.querySelector("#save")
+const excludemedia = document.querySelector("#media")
+const matchcase = document.querySelector("#case")
+const searchinput = document.querySelector("#searchtext")
+const defaultsize = searchinput.size
+const searchbutton = document.querySelector("#search")
+const oldinput = document.querySelector("#oldtext")
+const newinput = document.querySelector("#newtext")
+const replacebutton = document.querySelector("#replace")
+const progress = document.querySelector("progress")
+const matcheslist = document.querySelector("ol")
+const unmatchedtoggle = document.querySelector("details")
+const unmatchedlist = document.querySelector("details ol")
 
 //if(navigator.serviceWorker) {
-  //navigator.serviceWorker.register("offline.js").then(function() {
-    //if(navigator.serviceWorker.controller == null) {
-      //tell("Full functionality is now available offline.")
+ //navigator.serviceWorker.register("offline.js").then(function() {
+  //if(navigator.serviceWorker.controller == null) {
+   //tell("Full functionality is now available offline.")
 //} }) }
 
-String.prototype.replace = function(oldstring, newstring) { // default only replaces first instance
-  return(this.split(oldstring).join(newstring))
+NodeList.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator]
+
+String.prototype.replace = function(oldstring, newstring) {
+ return(this.split(oldstring).join(newstring))
 }
-
-String.prototype.includes = String.prototype.includes || String.prototype.contains // previous name in firefox 39-
-
-Array.from = Array.from || function(arraylike) { // available in chrome 45+
-  return(Array.prototype.slice.call(arraylike))
-}
-
 
 function not(boolean) {
   return !boolean
 }
 
 function controls(enabled) {
-  var controls = document.querySelectorAll("input, button")
-  for(var element of Array.from(controls)) {
+  for(var element of document.querySelectorAll("input, button")) {
     element.disabled = not(enabled)
   }
   if(enabled == false) {
