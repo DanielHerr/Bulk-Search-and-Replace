@@ -9,7 +9,6 @@ var folderbutton = document.querySelector("#folder")
 var autosave = document.querySelector("#save")
 var excludemedia = document.querySelector("#media")
 var matchcase = document.querySelector("#case")
-var mode = document.querySelector("select")
 var searchinput = document.querySelector("#searchtext")
 var defaultsize = searchinput.size
 var searchbutton = document.querySelector("#search")
@@ -65,8 +64,6 @@ function proceed(action) {
   if(progress.value == progress.max) {
     progress.style.display = "none"
     controls(true)
-  } else if(mode.value == "Cautious") {
-    action(files[progress.value])
   }
 }
 
@@ -187,12 +184,8 @@ function start(input, action) {
       progress.style.display = "block"
       progress.value = 0
       progress.max = files.length
-      if(mode.value == "Cautious") {
-        action(files[0])
-      } else {
-        for(var file in files) {
-          action(files[file])
-        }
+      for(var file in files) {
+        action(files[file])
       }
     } else {
       tell("You haven't entered any text.")
